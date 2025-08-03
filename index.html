@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TogetherA+ | Your Independence, Supported</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="EyeTracking.js"></script>
+    
+    <script src="VoiceTracking.js"></script>
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        // Moved Tailwind config into its own script tag for proper parsing.
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': {
+                            'DEFAULT': '#6D28D9', /* Deep Violet */
+                            'light': '#8B5CF6', /* Lighter Violet */
+                            'dark': '#5B21B6',  /* Darker Violet */
+                        },
+                        'secondary': '#10B981', /* Emerald Green */
+                        'neutral': {
+                            'light': '#F9FAFB', /* Very Light Gray */
+                            'DEFAULT': '#F3F4F6', /* Light Gray */
+                            'medium': '#9CA3AF',/* Gray */
+                            'dark': '#374151',  /* Dark Gray */
+                            'darkest': '#111827'/* Almost Black */
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'subtle-bob': 'subtleBob 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        subtleBob: {
+                            '0%, 100%': { transform: 'translateY(-2px)' },
+                            '50%': { transform: 'translateY(2px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for elements that are tricky with pure Tailwind */
+        .glassmorphism-header {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+        }
+
+        /* Set a default transition on all elements for smoothness */
+        * {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Hide scrollbar for a cleaner look */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* The element that is being animated */
+        .will-animate {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        /* The state when the element becomes visible */
+        .is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Styles for the eye-tracking test buttons */
+        .test-button {
+            transition: transform 0.2s ease-out, background-color 0.2s ease-out, color 0.2s ease-out;
+        }
+        /* The 'clicked' class is added by EyeTracking.js */
+        .test-button.clicked {
+            background-color: #10B981 !important; /* Use important to override tailwind */
+            color: white !important;
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+<body class="bg-white text-neutral-dark font-sans antialiased overflow-x-hidden">
+
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center max-w-7xl">
+            <a href="#" class="flex items-center">
+                 <img src="img/logo2.png" alt="TogetherA+ Logo" class="h-10" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';">
+                 <div style="display:none;" class="items-center gap-2">
+                    <svg class="h-8 w-8 text-primary" xmlns="http://www.w3.org/2000/svg" width="256" height="256" fill="currentColor" viewBox="0 0 256 256"><path d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128ZM128,56a40,40,0,1,0,40,40A40,40,0,0,0,128,56Zm0,96a56,56,0,0,0-47.34,27.14,72,72,0,0,1,94.68,0A56,56,0,0,0,128,152Z"></path></svg>
+                    <span class="text-2xl font-bold text-neutral-darkest">TogetherA+</span>
+                 </div>
+            </a>
+            <div class="hidden md:flex items-center gap-4">
+                <a href="login.php" class="text-white font-semibold hover:text-neutral-200">Login</a>
+                <a href="register.php" class="bg-primary text-white font-semibold px-5 py-2.5 rounded-lg shadow-md hover:bg-primary-dark hover:-translate-y-0.5 transform">Become a HelpMate</a>
+            </div>
+             <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-white">
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white mt-2">
+            <a href="#" class="block text-neutral-dark font-semibold hover:bg-neutral-light px-6 py-3">Login</a>
+            <a href="register.php" class="block text-neutral-dark font-semibold hover:bg-neutral-light px-6 py-3">Become a HelpMate</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative bg-cover bg-center pt-32 pb-20 md:pt-48 md:pb-32 text-center overflow-hidden" style="background-image: url('img/indexbg.jpg');">
+            <div class="absolute inset-0 bg-black/50"></div>
+            
+            <div class="container mx-auto px-6 max-w-4xl relative">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight will-animate">Reliable Help, Right at Your Fingertips.</h1>
+                <p class="text-lg md:text-xl text-neutral-light max-w-2xl mx-auto mb-10 will-animate" style="transition-delay: 150ms;">
+                    TogetherA+ is the trusted platform connecting individuals with disabilities to a community of vetted, skilled, and compassionate helpers for everyday tasks and specialized support.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center will-animate" style="transition-delay: 300ms;">
+                    <a href="registercustomer.php" class="bg-primary text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:bg-primary-dark hover:-translate-y-1 transform">Find a HelpMate Today</a>
+                    <a href="#how-it-works" class="bg-white/90 text-primary-dark font-bold py-4 px-8 rounded-xl shadow-lg hover:bg-white hover:-translate-y-1 transform border border-primary/20">Learn How It Works</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 md:py-28">
+            <div class="container mx-auto px-6 max-w-7xl text-center">
+                <p class="text-sm font-bold text-primary uppercase tracking-wider mb-3 will-animate">THE CHALLENGE</p>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-neutral-darkest mb-16 will-animate" style="transition-delay: 150ms;">Finding Trustworthy Help Shouldn't Be Hard</h2>
+                <div class="grid md:grid-cols-3 gap-8 text-left">
+                    <div class="bg-neutral-light p-8 rounded-2xl will-animate" style="transition-delay: 300ms;">
+                        <div class="mb-5 inline-flex items-center justify-center h-12 w-12 rounded-full bg-primary/10 text-primary">
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-neutral-darkest mb-3">Uncertainty and Safety</h3>
+                        <p class="text-neutral-medium leading-relaxed">Inviting someone new requires trust. We make it easy to verify who is qualified, reliable, and safe, removing the guesswork from online listings.</p>
+                    </div>
+                    <div class="bg-neutral-light p-8 rounded-2xl will-animate" style="transition-delay: 450ms;">
+                        <div class="mb-5 inline-flex items-center justify-center h-12 w-12 rounded-full bg-primary/10 text-primary">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-neutral-darkest mb-3">Finding the Right Skills</h3>
+                        <p class="text-neutral-medium leading-relaxed">Your needs are unique. Our platform helps you find someone with specific skills, from academic support to personal care, without the hassle.</p>
+                    </div>
+                    <div class="bg-neutral-light p-8 rounded-2xl will-animate" style="transition-delay: 600ms;">
+                        <div class="mb-5 inline-flex items-center justify-center h-12 w-12 rounded-full bg-primary/10 text-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-neutral-darkest mb-3">Inflexible Arrangements</h3>
+                        <p class="text-neutral-medium leading-relaxed">Traditional agencies can be rigid. Here, you get the flexibility to find help on your schedule and terms, at a fair and transparent rate.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="how-it-works" class="py-20 md:py-28 bg-neutral-light">
+            <div class="container mx-auto px-6 max-w-7xl">
+                <div class="text-center mb-16">
+                    <p class="text-sm font-bold text-primary uppercase tracking-wider mb-3 will-animate">HOW IT WORKS</p>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-neutral-darkest will-animate" style="transition-delay: 150ms;">Get Support in 4 Simple Steps</h2>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+                    <div class="lg:sticky top-28 h-96 lg:h-[30rem] will-animate" style="transition-delay: 300ms;">
+                        <div class="w-full h-full rounded-2xl shadow-2xl bg-cover bg-center" id="step-image" style="background-image: url('https://placehold.co/600x450/6D28D9/FFFFFF?text=1.+Post+Your+Task&font=inter');">
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-6">
+                        <div class="step p-6 rounded-xl cursor-pointer border-2 border-transparent will-animate" data-image-url="https://placehold.co/600x450/6D28D9/FFFFFF?text=1.+Post+Your+Task&font=inter">
+                            <div class="flex items-start gap-5">
+                                <button class="flex-shrink-0 h-12 w-12 flex items-center justify-center rounded-full bg-primary/10 text-primary hover:bg-primary/20 focus:outline-none focus:ring-2 ring-primary-light" onclick="window.handleStepClick(this.closest('.step'))">
+                                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
+                                </button>
+                                <button class="text-left" onclick="window.handleStepClick(this.closest('.step'))">
+                                    <h4 class="font-bold text-lg text-neutral-darkest mb-1">1. Post Your Task</h4>
+                                    <p class="text-neutral-medium">Describe what you need, from one-time help to ongoing support. You set the schedule and a fair rate.</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="step p-6 rounded-xl cursor-pointer border-2 border-transparent will-animate" data-image-url="https://placehold.co/600x450/5B21B6/FFFFFF?text=2.+Connect&font=inter">
+                             <div class="flex items-start gap-5">
+                                <button class="flex-shrink-0 h-12 w-12 flex items-center justify-center rounded-full bg-primary/10 text-primary hover:bg-primary/20 focus:outline-none focus:ring-2 ring-primary-light" onclick="window.handleStepClick(this.closest('.step'))">
+                                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                                 </button>
+                                <button class="text-left" onclick="window.handleStepClick(this.closest('.step'))">
+                                    <h4 class="font-bold text-lg text-neutral-darkest mb-1">2. Connect with HelpMates</h4>
+                                    <p class="text-neutral-medium">Receive applications from verified HelpMates. Review profiles, skills, and ratings to find your match.</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="step p-6 rounded-xl cursor-pointer border-2 border-transparent will-animate" data-image-url="https://placehold.co/600x450/4C1D95/FFFFFF?text=3.+Get+Support&font=inter">
+                             <div class="flex items-start gap-5">
+                                <button class="flex-shrink-0 h-12 w-12 flex items-center justify-center rounded-full bg-primary/10 text-primary hover:bg-primary/20 focus:outline-none focus:ring-2 ring-primary-light" onclick="window.handleStepClick(this.closest('.step'))">
+                                   <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                                 </button>
+                                <button class="text-left" onclick="window.handleStepClick(this.closest('.step'))">
+                                    <h4 class="font-bold text-lg text-neutral-darkest mb-1">3. Get Support</h4>
+                                    <p class="text-neutral-medium">Coordinate with your chosen HelpMate. They'll arrive on schedule to complete the task to your satisfaction.</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="step p-6 rounded-xl cursor-pointer border-2 border-transparent will-animate" data-image-url="https://placehold.co/600x450/3730A3/FFFFFF?text=4.+Pay+Securely&font=inter">
+                             <div class="flex items-start gap-5">
+                                <button class="flex-shrink-0 h-12 w-12 flex items-center justify-center rounded-full bg-primary/10 text-primary hover:bg-primary/20 focus:outline-none focus:ring-2 ring-primary-light" onclick="window.handleStepClick(this.closest('.step'))">
+                                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg>
+                                 </button>
+                                <button class="text-left" onclick="window.handleStepClick(this.closest('.step'))">
+                                    <h4 class="font-bold text-lg text-neutral-darkest mb-1">4. Pay Securely</h4>
+                                    <p class="text-neutral-medium">Once the job is done, approve the payment through our secure platform. No cash, no hassle.</p>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="eye-tracking-demo" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6 max-w-5xl text-center">
+                <p class="text-sm font-bold text-secondary uppercase tracking-wider mb-3 will-animate">ACCESSIBILITY FIRST</p>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-neutral-darkest mb-4 will-animate" style="transition-delay: 150ms;">Control This Page With Your Eyes</h2>
+                <p class="text-lg text-neutral-medium max-w-3xl mx-auto mb-12 will-animate" style="transition-delay: 300ms;">
+                    This page uses the live `EyeTracking.js` script. To try it, use the widget on your screen:
+                    <br> 
+                    <span class="font-bold">1. Click Start</span> &rarr; <span class="font-bold">2. Click Calibrate</span> &rarr; <span class="font-bold">3. Gaze at a button below and blink to click!</span>
+                </p>
+                <div class="p-8 bg-neutral-light rounded-2xl shadow-inner">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+                        <button class="test-button bg-white text-primary-dark font-bold py-8 px-6 rounded-xl shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-secondary/50 will-animate" style="transition-delay: 450ms;">
+                            Click me with your eyes
+                        </button>
+                        <button class="test-button bg-white text-primary-dark font-bold py-8 px-6 rounded-xl shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-secondary/50 will-animate" style="transition-delay: 600ms;">
+                            Or try me!
+                        </button>
+                        <button class="test-button bg-white text-primary-dark font-bold py-8 px-6 rounded-xl shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-secondary/50 will-animate" style="transition-delay: 750ms;">
+                            Blink here!
+                        </button>
+                    </div>
+                    
+                    <div class="mt-12 pt-8 border-t border-neutral-medium/20">
+                        <h3 class="text-xl font-bold text-neutral-darkest mb-6 will-animate" style="transition-delay: 150ms;">Test on a Number Pad</h3>
+                        <div class="grid grid-cols-3 gap-4 max-w-xs mx-auto">
+                            <button class="test-button text-2xl bg-white text-primary-dark font-bold py-5 rounded-xl shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-secondary/50">1</button>
+                            <button class="test-button text-2xl bg-white text-primary-dark font-bold py-5 rounded-xl shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-secondary/50">2</button>
+                            <button class="test-button text-2xl bg-white text-primary-dark font-bold py-5 rounded-xl shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-secondary/50">3</button>
+                            <button class="test-button text-2xl bg-white text-primary-dark font-bold py-5 rounded-xl shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-secondary/50">4</button>
+                            <button class="test-button text-2xl bg-white text-primary-dark font-bold py-5 rounded-xl shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-secondary/50">5</button>
+                            <button class="test-button text-2xl bg-white text-primary-dark font-bold py-5 rounded-xl shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-secondary/50">6</button>
+                            <button class="test-button text-2xl bg-white text-primary-dark font-bold py-5 rounded-xl shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-secondary/50">7</button>
+                            <button class="test-button text-2xl bg-white text-primary-dark font-bold py-5 rounded-xl shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-secondary/50">8</button>
+                            <button class="test-button text-2xl bg-white text-primary-dark font-bold py-5 rounded-xl shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-secondary/50">9</button>
+                            <div class="col-span-1"></div> <button class="test-button text-2xl bg-white text-primary-dark font-bold py-5 rounded-xl shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-secondary/50">0</button>
+                            <div class="col-span-1"></div> </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+    
+    <footer class="bg-neutral-darkest text-white">
+        <div class="container mx-auto px-6 py-12 max-w-7xl">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="col-span-2 md:col-span-1">
+                    <a href="#" class="flex items-center gap-2 mb-4">
+                        <img src="img/logo2.png" alt="TogetherA+ Logo" class="h-10" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div style="display:none;" class="items-center gap-2">
+                            <svg class="h-8 w-8 text-white" xmlns="http://www.w3.org/2000/svg" width="256" height="256" fill="currentColor" viewBox="0 0 256 256"><path d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128ZM128,56a40,40,0,1,0,40,40A40,40,0,0,0,128,56Zm0,96a56,56,0,0,0-47.34,27.14,72,72,0,0,1,94.68,0A56,56,0,0,0,128,152Z"></path></svg>
+                            <span class="text-2xl font-bold">TogetherA+</span>
+                        </div>
+                    </a>
+                    <p class="text-neutral-medium text-sm">Your independence, supported.</p>
+                </div>
+                <div>
+                    <h5 class="font-bold tracking-wider uppercase mb-4">Platform</h5>
+                    <nav class="flex flex-col gap-2">
+                        <a href="#" class="hover:text-primary-light">How it Works</a>
+                        <a href="#" class="hover:text-primary-light">Find Help</a>
+                        <a href="register.php" class="hover:text-primary-light">Become a HelpMate</a>
+                    </nav>
+                </div>
+                <div>
+                    <h5 class="font-bold tracking-wider uppercase mb-4">Company</h5>
+                    <nav class="flex flex-col gap-2">
+                        <a href="#" class="hover:text-primary-light">About Us</a>
+                        <a href="#" class="hover:text-primary-light">Careers</a>
+                        <a href="#" class="hover:text-primary-light">Press</a>
+                    </nav>
+                </div>
+                 <div>
+                    <h5 class="font-bold tracking-wider uppercase mb-4">Support</h5>
+                    <nav class="flex flex-col gap-2">
+                        <a href="#" class="hover:text-primary-light">Help Center</a>
+                        <a href="#" class="hover:text-primary-light">Trust & Safety</a>
+                        <a href="#" class="hover:text-primary-light">Contact Us</a>
+                    </nav>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-neutral-dark pt-8 text-center text-neutral-medium text-sm">
+                <p>&copy; 2025 TogetherA+. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module">
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- Prevent EyeTracker from starting automatically ---
+            if (window.EyeTracking) {
+                window.EyeTracking.updateConfig({ 
+                    autoStart: false,
+                    showFaceMesh: true
+                });
+            }
+
+            // --- Navbar Scroll Logic ---
+            const header = document.getElementById('main-header');
+            if (header) {
+                const updateNavOnScroll = () => {
+                    const heroSection = document.querySelector('.relative.bg-cover');
+                    const loginLink = header.querySelector('a[href="login.php"]');
+                    const mobileMenuIcon = header.querySelector('#mobile-menu-button');
+                    
+                    if (heroSection && (window.scrollY < (heroSection.offsetHeight - header.offsetHeight))) {
+                        loginLink.classList.remove('text-neutral-dark');
+                        loginLink.classList.add('text-white');
+                        mobileMenuIcon.classList.add('text-white');
+                        mobileMenuIcon.classList.remove('text-neutral-darkest');
+
+                    } else {
+                        loginLink.classList.remove('text-white');
+                        loginLink.classList.add('text-neutral-dark');
+                        mobileMenuIcon.classList.remove('text-white');
+                        mobileMenuIcon.classList.add('text-neutral-darkest');
+                    }
+
+                    if (window.scrollY > 10) {
+                        header.classList.add('glassmorphism-header', 'shadow-md');
+                    } else {
+                        header.classList.remove('glassmorphism-header', 'shadow-md');
+                    }
+                };
+
+                window.addEventListener('scroll', updateNavOnScroll);
+                updateNavOnScroll();
+            }
+
+            // --- Mobile Menu Toggle ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // --- Intersection Observer for scroll animations ---
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const delay = entry.target.style.transitionDelay ? parseFloat(entry.target.style.transitionDelay) : 0;
+                        setTimeout(() => {
+                           entry.target.classList.add('is-visible');
+                        }, delay);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                rootMargin: '0px',
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.will-animate').forEach(el => {
+                observer.observe(el);
+            });
+
+
+            // --- Interactive Steps Logic (Refactored for Eye-Tracking) ---
+
+            // Define the function that handles the click logic on the window object
+            // so it's accessible from the HTML onclick attribute. This makes it robust
+            // for both mouse clicks and eye-tracker activation.
+            window.handleStepClick = function(clickedStep) {
+                const steps = document.querySelectorAll('.step');
+                const stepImage = document.getElementById('step-image');
+                if (!clickedStep || !steps.length || !stepImage) return;
+
+                const newImageUrl = clickedStep.dataset.imageUrl;
+
+                // Remove active state from all steps
+                steps.forEach(s => s.classList.remove('active', 'bg-white', 'border-primary/50', 'shadow-lg'));
+                
+                // Add active state to the clicked step
+                clickedStep.classList.add('active', 'bg-white', 'border-primary/50', 'shadow-lg');
+
+                // Change the image with a subtle fade effect
+                if (stepImage.style.backgroundImage !== `url("${newImageUrl}")`) {
+                    stepImage.style.opacity = 0.7;
+                    setTimeout(() => {
+                        stepImage.style.backgroundImage = `url("${newImageUrl}")`;
+                        stepImage.style.opacity = 1;
+                    }, 200);
+                }
+            };
+
+            // Set the initial state for the 'How It Works' section on page load
+            const steps = document.querySelectorAll('.step');
+            const stepImage = document.getElementById('step-image');
+
+            if (steps.length > 0 && stepImage) {
+                // Preload images to prevent flickering
+                steps.forEach(step => {
+                    const img = new Image();
+                    img.src = step.dataset.imageUrl;
+                });
+                
+                // Set the first step as active by default
+                const firstStepContainer = steps[0];
+                firstStepContainer.classList.add('active', 'bg-white', 'border-primary/50', 'shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>

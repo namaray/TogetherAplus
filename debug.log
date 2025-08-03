@@ -1,0 +1,133 @@
+2025-06-29 10:36:29: Script started
+2025-06-29 10:36:29: Received data: {"message":"hello"}
+2025-06-29 10:36:29: Curated response sent
+2025-06-29 10:36:36: Script started
+2025-06-29 10:36:36: Received data: {"message":"Can you help me with something"}
+2025-06-29 10:36:36: Curated response sent
+2025-06-29 10:36:57: Script started
+2025-06-29 10:36:57: Received data: {"message":"how can i hire a helper"}
+2025-06-29 10:36:57: Curated response sent
+2025-06-29 10:36:58: Script started
+2025-06-29 10:36:58: Received data: {"message":"oia"}
+2025-06-29 10:36:59: Raw API Response: Not Found
+2025-06-29 10:36:59: Error: API returned HTTP code 404
+2025-06-29 10:37:00: Script started
+2025-06-29 10:37:00: Received data: {"message":"ad"}
+2025-06-29 10:37:01: Raw API Response: Not Found
+2025-06-29 10:37:01: Error: API returned HTTP code 404
+2025-06-29 10:38:01: Script started
+2025-06-29 10:38:01: Received data: {"message":"What is togethera+"}
+2025-06-29 10:38:02: Raw API Response: {"id":"chatcmpl-bd77bf47-71ba-4841-87ad-d05aca8e333e","object":"chat.completion","created":1751186282,"model":"meta-llama/llama-4-scout-17b-16e-instruct","choices":[{"index":0,"message":{"role":"assistant","content":"TogetherA+ is a platform that connects people with disabilities to helper services and accessibility resources, empowering independence and improving quality of life. Our platform offers a comprehensive range of services, including task matching, accessibility resources, and secure payment processing, all designed to support individuals with disabilities. With TogetherA+, you can discover and connect with qualified helpers, access a library of accessibility resources, and enjoy a safe and secure experience. Have you considered exploring how our platform can support your specific needs or goals?"},"logprobs":null,"finish_reason":"stop"}],"usage":{"queue_time":0.051350219999999995,"prompt_tokens":1237,"prompt_time":0.046549714,"completion_tokens":99,"completion_time":0.237536654,"total_tokens":1336,"total_time":0.284086368},"usage_breakdown":null,"system_fingerprint":"fp_37da608fc1","x_groq":{"id":"req_01jyxdc5f7efqrvkhwvjm1rkda"}}
+
+2025-06-29 10:38:02: AI response sent with conversation memory
+2025-06-29 10:38:07: Script started
+2025-06-29 10:38:07: Received data: {"message":"How can i hire a helper"}
+2025-06-29 10:38:08: Raw API Response: {"id":"chatcmpl-c358899f-5e2d-4209-962d-1a784a62f116","object":"chat.completion","created":1751186288,"model":"meta-llama/llama-4-scout-17b-16e-instruct","choices":[{"index":0,"message":{"role":"assistant","content":"To hire a helper through TogetherA+, you can follow these steps:\n\n1. **Post a task**: Share details about the help you need, such as household tasks, personal care, or transportation, and set your preferred schedule.\n2. **Browse helpers**: Explore profiles of qualified, background-checked helpers in your area, and read reviews from other users.\n3. **Match with a helper**: Our task matching system will connect you with helpers who fit your needs and schedule.\n4. **Book and pay securely**: Use our integrated payment processing system for a safe and convenient experience.\n\nYou can also **explore our resources** to learn more about our services and find helpers in various categories, such as daily living, health \u0026 medical, or social \u0026 recreation. Ready to get started? You can post a task now, browse helpers in your area, or learn more about our services."},"logprobs":null,"finish_reason":"stop"}],"usage":{"queue_time":0.045944473,"prompt_tokens":1351,"prompt_time":0.038072626,"completion_tokens":177,"completion_time":0.415992858,"total_tokens":1528,"total_time":0.454065484},"usage_breakdown":null,"system_fingerprint":"fp_79da0e0073","x_groq":{"id":"req_01jyxdcbcjefra7tdnkf5a9hzj"}}
+
+2025-06-29 10:38:08: AI response sent with conversation memory
+2025-06-29 10:38:49: Script started
+2025-06-29 10:38:49: Received data: {"message":"helo"}
+2025-06-29 10:38:50: Raw API Response: {"id":"chatcmpl-0cc7c337-2b7e-44de-93f3-3b9ff22a52bd","object":"chat.completion","created":1751186330,"model":"meta-llama/llama-4-scout-17b-16e-instruct","choices":[{"index":0,"message":{"role":"assistant","content":"Hello! Welcome to TogetherA+. How can I assist you today? Do you have a specific need or question, or would you like to explore our services and resources? I'm here to help!"},"logprobs":null,"finish_reason":"stop"}],"usage":{"queue_time":0.063771789,"prompt_tokens":1539,"prompt_time":0.051042781,"completion_tokens":40,"completion_time":0.096390798,"total_tokens":1579,"total_time":0.147433579},"usage_breakdown":null,"system_fingerprint":"fp_37da608fc1","x_groq":{"id":"req_01jyxddmr1fa79zbp0r4ts6q9e"}}
+
+2025-06-29 10:38:50: AI response sent with conversation memory
+2025-06-29 10:39:35: Script started
+2025-06-29 10:39:35: Received data: {"message":"how can i help you today"}
+2025-06-29 10:39:36: Raw API Response: {"id":"chatcmpl-5c118f92-9408-43cd-982f-349dff43a6b5","object":"chat.completion","created":1751186376,"model":"meta-llama/llama-4-scout-17b-16e-instruct","choices":[{"index":0,"message":{"role":"assistant","content":"I'm here to help you in any way I can. What brings you to TogetherA+ today? Are you looking for assistance with daily tasks, seeking accessibility resources, or perhaps exploring ways to connect with others who share similar experiences? Our platform offers a wide range of services and resources designed to empower independence and improve quality of life for people with disabilities.\n\nIf you're looking for help with a specific task or need, you can post a task now and get matched with qualified helpers. Or, you can browse our comprehensive resource library to discover guides, tips, and information on various topics. We also have community forums where you can connect with others, share experiences, and find support.\n\nLet me know how I can assist you today!"},"logprobs":null,"finish_reason":"stop"}],"usage":{"queue_time":0.049095231999999996,"prompt_tokens":1238,"prompt_time":0.046182568,"completion_tokens":146,"completion_time":0.319409737,"total_tokens":1384,"total_time":0.365592305},"usage_breakdown":null,"system_fingerprint":"fp_37da608fc1","x_groq":{"id":"req_01jyxdf26mffht21btbg175ke4"}}
+
+2025-06-29 10:39:36: AI response sent with conversation memory
+2025-06-29 10:41:01: Script started
+2025-06-29 10:41:01: Received data: {"message":"Hello, how are you?"}
+2025-06-29 10:41:03: Raw API Response: {"id":"chatcmpl-37a5d5cc-a5f6-481a-97eb-acc1c666bb47","object":"chat.completion","created":1751186463,"model":"meta-llama/llama-4-scout-17b-16e-instruct","choices":[{"index":0,"message":{"role":"assistant","content":"I'm doing well, thank you for asking! I'm here to help and support you in any way I can. It's great to connect with you! How about you? Is there something on your mind that you'd like to talk about or a challenge you're facing where TogetherA+ can offer some assistance? Whether it's finding a helper for daily tasks, accessing resources, or just needing someone to chat with, I'm here to listen and help."},"logprobs":null,"finish_reason":"stop"}],"usage":{"queue_time":0.07530026000000001,"prompt_tokens":1399,"prompt_time":0.065431918,"completion_tokens":87,"completion_time":0.207522381,"total_tokens":1486,"total_time":0.272954299},"usage_breakdown":null,"system_fingerprint":"fp_79da0e0073","x_groq":{"id":"req_01jyxdhpx5egyb1fnsrj4cbw6n"}}
+
+2025-06-29 10:41:03: AI response sent with conversation memory
+2025-06-29 10:41:12: Script started
+2025-06-29 10:41:12: Received data: {"message":"Please help me out."}
+2025-06-29 10:41:14: Raw API Response: {"id":"chatcmpl-47b44c83-d0dc-42fa-8d21-20fb58dfca54","object":"chat.completion","created":1751186474,"model":"meta-llama/llama-4-scout-17b-16e-instruct","choices":[{"index":0,"message":{"role":"assistant","content":"I'm here to support you. What do you need help with today? Is it related to daily tasks, accessibility resources, or perhaps connecting with others? TogetherA+ offers a range of services, from task matching to community forums, to help you achieve independence and improve your quality of life.\n\nYou can:\n\n* Post a task now and get matched with qualified helpers\n* Explore our resource library for guides and information\n* Connect with others in our community forums\n\nLet me know how I can assist you, and we'll take it from there!"},"logprobs":null,"finish_reason":"stop"}],"usage":{"queue_time":0.11775047799999999,"prompt_tokens":1500,"prompt_time":0.090807565,"completion_tokens":109,"completion_time":0.263237001,"total_tokens":1609,"total_time":0.354044566},"usage_breakdown":null,"system_fingerprint":"fp_37da608fc1","x_groq":{"id":"req_01jyxdj10seh1vg0emqn9vrhja"}}
+
+2025-06-29 10:41:14: AI response sent with conversation memory
+2025-06-29 10:59:28: Script started
+2025-06-29 10:59:28: Received data: {"message":"clear history"}
+2025-06-29 10:59:28: Conversation history cleared
+2025-06-29 11:06:25: Script started
+2025-06-29 11:06:25: Received data: {"message":"hi"}
+2025-06-29 11:06:27: Raw API Response: {"id":"chatcmpl-3de61ae5-2498-4424-ab38-0390ad693787","object":"chat.completion","created":1751187988,"model":"meta-llama/llama-4-scout-17b-16e-instruct","choices":[{"index":0,"message":{"role":"assistant","content":"Hi! It's great to connect with you. Is everything okay? Do you need assistance with something specific or just want to chat? I'm here to listen and help in any way I can. TogetherA+ is here to support you in achieving independence and improving your quality of life. Let's chat!"},"logprobs":null,"finish_reason":"stop"}],"usage":{"queue_time":0.048914622,"prompt_tokens":1619,"prompt_time":0.061931888,"completion_tokens":60,"completion_time":0.155734903,"total_tokens":1679,"total_time":0.217666791},"usage_breakdown":null,"system_fingerprint":"fp_79da0e0073","x_groq":{"id":"req_01jyxf07gbfst84dxm4zpj4wrr"}}
+
+2025-06-29 11:06:27: AI response sent with conversation memory
+2025-06-29 11:06:28: Script started
+2025-06-29 11:06:28: Received data: {"message":"what is togethera+"}
+2025-06-29 11:06:32: Raw API Response: {"id":"chatcmpl-28040fb9-6707-476c-b0c8-f3e5c0db2a24","object":"chat.completion","created":1751187992,"model":"meta-llama/llama-4-scout-17b-16e-instruct","choices":[{"index":0,"message":{"role":"assistant","content":"TogetherA+ is a platform that connects people with disabilities to helper services and accessibility resources. Our goal is to empower independence, dignity, and community support.\n\nWe offer a range of services, including:\n\n* Task matching with qualified helpers for daily tasks, errands, and more\n* A comprehensive accessibility resource library\n* Secure payment processing and trusted contacts network\n* Community forums for peer support and connection\n\nOur platform is designed to help you live confidently and achieve your goals. Would you like to learn more about how TogetherA+ can support you?"},"logprobs":null,"finish_reason":"stop"}],"usage":{"queue_time":0.047486314,"prompt_tokens":1693,"prompt_time":0.092688186,"completion_tokens":111,"completion_time":0.257878757,"total_tokens":1804,"total_time":0.350566943},"usage_breakdown":null,"system_fingerprint":"fp_79da0e0073","x_groq":{"id":"req_01jyxf0bthfmzr14r2e4dexjwv"}}
+
+2025-06-29 11:06:32: AI response sent with conversation memory
+2025-06-29 11:18:06: Script started
+2025-06-29 11:18:06: Received data: {"message":"nigga fucj iff"}
+2025-06-29 11:18:07: Raw API Response: {"id":"chatcmpl-d0e485cd-229a-4690-aefe-fdae13fa9a29","object":"chat.completion","created":1751188687,"model":"meta-llama/llama-4-scout-17b-16e-instruct","choices":[{"index":0,"message":{"role":"assistant","content":"I'm here to help and support you, but I understand that sometimes we all need a break. If you're feeling frustrated or overwhelmed, I'm here to listen. Would you like to talk about what's on your mind or explore ways TogetherA+ can assist you when you're ready?"},"logprobs":null,"finish_reason":"stop"}],"usage":{"queue_time":0.053974681999999996,"prompt_tokens":1819,"prompt_time":0.086365098,"completion_tokens":55,"completion_time":0.127106695,"total_tokens":1874,"total_time":0.213471793},"usage_breakdown":null,"system_fingerprint":"fp_79da0e0073","x_groq":{"id":"req_01jyxfnjtjfsza18m96bf9v1nt"}}
+
+2025-06-29 11:18:07: AI response sent with conversation memory
+2025-06-29 11:18:10: Script started
+2025-06-29 11:18:10: Received data: {"message":"get yo ass outta here"}
+2025-06-29 11:18:11: Raw API Response: {"id":"chatcmpl-4de7fc03-e0a9-46ae-ad59-6877cf816c6a","object":"chat.completion","created":1751188692,"model":"meta-llama/llama-4-scout-17b-16e-instruct","choices":[{"index":0,"message":{"role":"assistant","content":"I understand that you're upset. I'm here to help, but I can see that you're not in the right mindset for a conversation. If you need support or just want to talk, I'm here for you. You can also reach out to our support team at togethera@gmail.com if you need assistance. Take care of yourself!"},"logprobs":null,"finish_reason":"stop"}],"usage":{"queue_time":0.08776329199999999,"prompt_tokens":1889,"prompt_time":0.101753007,"completion_tokens":66,"completion_time":0.152859217,"total_tokens":1955,"total_time":0.254612224},"usage_breakdown":null,"system_fingerprint":"fp_79da0e0073","x_groq":{"id":"req_01jyxfnq0de14tvab78940ha2h"}}
+
+2025-06-29 11:18:11: AI response sent with conversation memory
+2025-06-29 11:18:14: Script started
+2025-06-29 11:18:14: Received data: {"message":"stfu man"}
+2025-06-29 11:18:19: Raw API Response: {"id":"chatcmpl-a4f54f5e-b2a8-4f0a-9371-3a679e7aa1f6","object":"chat.completion","created":1751188699,"model":"meta-llama/llama-4-scout-17b-16e-instruct","choices":[{"index":0,"message":{"role":"assistant","content":"I apologize if I frustrated you. I'm here to help, and I want to support you. If you're not ready to talk, that's okay. You can reach out to our support team at togethera@gmail.com if you need assistance or have questions. Take care!"},"logprobs":null,"finish_reason":"stop"}],"usage":{"queue_time":0.250187808,"prompt_tokens":1967,"prompt_time":0.103367282,"completion_tokens":54,"completion_time":0.128633767,"total_tokens":2021,"total_time":0.232001049},"usage_breakdown":null,"system_fingerprint":"fp_37da608fc1","x_groq":{"id":"req_01jyxfny4sft1r5cpetbq3m1f2"}}
+
+2025-06-29 11:18:19: AI response sent with conversation memory
+2025-06-29 11:18:19: Script started
+2025-06-29 11:18:19: Received data: {"message":"i dont need your bukllshit"}
+2025-06-29 11:18:20: Raw API Response: {"id":"chatcmpl-ddc1364e-c44a-4d1c-b87d-038f99f4b952","object":"chat.completion","created":1751188700,"model":"meta-llama/llama-4-scout-17b-16e-instruct","choices":[{"index":0,"message":{"role":"assistant","content":"I understand. I'm here to help, but I can see that you're not interested in talking right now. If you change your mind or need assistance in the future, don't hesitate to reach out to us at togethera@gmail.com. Take care of yourself!"},"logprobs":null,"finish_reason":"stop"}],"usage":{"queue_time":0.05059935700000001,"prompt_tokens":2037,"prompt_time":0.069454173,"completion_tokens":52,"completion_time":0.121928751,"total_tokens":2089,"total_time":0.191382924},"usage_breakdown":null,"system_fingerprint":"fp_37da608fc1","x_groq":{"id":"req_01jyxfnzppe179sg455sn7qy65"}}
+
+2025-06-29 11:18:20: AI response sent with conversation memory
+2025-06-29 11:18:21: Script started
+2025-06-29 11:18:21: Received data: {"message":"biatch"}
+2025-06-29 11:18:22: Raw API Response: {"id":"chatcmpl-38a55cc2-1c7e-4c07-bde6-9e79a925f6a1","object":"chat.completion","created":1751188702,"model":"meta-llama/llama-4-scout-17b-16e-instruct","choices":[{"index":0,"message":{"role":"assistant","content":"I'm here to help and support you, but I understand that you're not in the mood for conversation. If you need assistance or just want to talk in the future, I'm here for you. You can also reach out to our support team at togethera@gmail.com. Take care!"},"logprobs":null,"finish_reason":"stop"}],"usage":{"queue_time":0.11406108799999999,"prompt_tokens":2100,"prompt_time":0.078581951,"completion_tokens":57,"completion_time":0.136009025,"total_tokens":2157,"total_time":0.214590976},"usage_breakdown":null,"system_fingerprint":"fp_79da0e0073","x_groq":{"id":"req_01jyxfp0y3f2x8k9khpkmemarx"}}
+
+2025-06-29 11:18:22: AI response sent with conversation memory
+2025-06-29 11:18:28: Script started
+2025-06-29 11:18:28: Received data: {"message":"i dont need your goddamn hekp"}
+2025-06-29 11:18:31: Raw API Response: {"id":"chatcmpl-ea22a942-a4dd-4daa-af8d-7db38f20ab45","object":"chat.completion","created":1751188711,"model":"meta-llama/llama-4-scout-17b-16e-instruct","choices":[{"index":0,"message":{"role":"assistant","content":"I understand. I'm here to help, but I respect your boundaries. If you change your mind or need assistance in the future, don't hesitate to reach out to us at togethera@gmail.com. Take care of yourself!"},"logprobs":null,"finish_reason":"stop"}],"usage":{"queue_time":0.10426112,"prompt_tokens":2175,"prompt_time":0.107272882,"completion_tokens":45,"completion_time":0.108092407,"total_tokens":2220,"total_time":0.215365289},"usage_breakdown":null,"system_fingerprint":"fp_37da608fc1","x_groq":{"id":"req_01jyxfpa0bf30b83e4jp0c3h9d"}}
+
+2025-06-29 11:18:31: AI response sent with conversation memory
+2025-06-29 11:18:31: Script started
+2025-06-29 11:18:31: Received data: {"message":"autistic fotr life"}
+2025-06-29 11:18:32: Raw API Response: {"id":"chatcmpl-88a9759e-1487-4bd6-9d0f-0d14e9f2cb10","object":"chat.completion","created":1751188712,"model":"meta-llama/llama-4-scout-17b-16e-instruct","choices":[{"index":0,"message":{"role":"assistant","content":"I'm glad you're embracing your identity and community! Being autistic is a natural part of who you are, and it's wonderful that you're proud to be yourself.\n\nAt TogetherA+, we believe in empowering individuals with autism and other disabilities to live confidently and independently. Our platform offers a range of services and resources to support your needs, from task helpers to accessibility guides.\n\nIf you're interested in exploring how we can support you, feel free to reach out to our support team at togethera@gmail.com or post a task to get started. We're here to help!"},"logprobs":null,"finish_reason":"stop"}],"usage":{"queue_time":0.05924210699999999,"prompt_tokens":2073,"prompt_time":0.095586063,"completion_tokens":111,"completion_time":0.261686012,"total_tokens":2184,"total_time":0.357272075},"usage_breakdown":null,"system_fingerprint":"fp_37da608fc1","x_groq":{"id":"req_01jyxfpb94e1bv2h63f69e0ae9"}}
+
+2025-06-29 11:18:32: AI response sent with conversation memory
+2025-06-29 11:18:34: Script started
+2025-06-29 11:18:34: Received data: {"message":"clear history"}
+2025-06-29 11:18:34: Conversation history cleared
+2025-06-29 11:44:00: Script started
+2025-06-29 11:44:00: Received data: {"message":"dsdfghjkl"}
+2025-06-29 11:44:01: Raw API Response: {"id":"chatcmpl-00e758e3-51b8-49bd-bccb-04e3af6e81ce","object":"chat.completion","created":1751190242,"model":"meta-llama/llama-4-scout-17b-16e-instruct","choices":[{"index":0,"message":{"role":"assistant","content":"It seems like you might have accidentally typed a string of letters. No worries! If you'd like to talk about something specific or need assistance, I'm here to help. TogetherA+ is here to support you in achieving independence and confidence in your daily life. What brings you here today?"},"logprobs":null,"finish_reason":"stop"}],"usage":{"queue_time":0.06364709099999999,"prompt_tokens":1237,"prompt_time":0.049576949,"completion_tokens":58,"completion_time":0.135294772,"total_tokens":1295,"total_time":0.184871721},"usage_breakdown":null,"system_fingerprint":"fp_37da608fc1","x_groq":{"id":"req_01jyxh50mje5ertpjb594z8phg"}}
+
+2025-06-29 11:44:01: AI response sent with conversation memory
+2025-06-29 11:44:20: Script started
+2025-06-29 11:44:20: Received data: {"message":"hi I need a helper"}
+2025-06-29 11:44:20: Raw API Response: {"id":"chatcmpl-c008d950-131d-4db6-9ff5-8efac5872a01","object":"chat.completion","created":1751190260,"model":"meta-llama/llama-4-scout-17b-16e-instruct","choices":[{"index":0,"message":{"role":"assistant","content":"Hi there! I'm here to help. TogetherA+ connects you with qualified helpers who can assist with various tasks. What kind of help do you need today? Daily living, transportation, tech support, or something else? We have helpers available in many areas."},"logprobs":null,"finish_reason":"stop"}],"usage":{"queue_time":0.063884564,"prompt_tokens":1309,"prompt_time":0.084052556,"completion_tokens":53,"completion_time":0.112289411,"total_tokens":1362,"total_time":0.196341967},"usage_breakdown":null,"system_fingerprint":"fp_79da0e0073","x_groq":{"id":"req_01jyxh5k2xedmtyc5g6vcyf8wz"}}
+
+2025-06-29 11:44:20: AI response sent with conversation memory
+2025-06-29 11:44:43: Script started
+2025-06-29 11:44:43: Received data: {"message":"hello"}
+2025-06-29 11:44:44: Raw API Response: {"id":"chatcmpl-136d92b4-da0d-49cf-be9e-d61da38180d2","object":"chat.completion","created":1751190284,"model":"meta-llama/llama-4-scout-17b-16e-instruct","choices":[{"index":0,"message":{"role":"assistant","content":"Hello! It's great to connect with you. If you're looking for support or assistance, TogetherA+ is here to help. Our platform connects you with trusted helpers who can aid with daily tasks, accessibility resources, and more. How can we assist you today?"},"logprobs":null,"finish_reason":"stop"}],"usage":{"queue_time":0.106329226,"prompt_tokens":1372,"prompt_time":0.074313194,"completion_tokens":53,"completion_time":0.128459926,"total_tokens":1425,"total_time":0.20277312},"usage_breakdown":null,"system_fingerprint":"fp_79da0e0073","x_groq":{"id":"req_01jyxh69x4edvr2edk0qbb59fj"}}
+
+2025-06-29 11:44:44: AI response sent with conversation memory
+2025-06-29 11:44:59: Script started
+2025-06-29 11:44:59: Received data: {"message":"Trust can help. Hello, how are you tasks access?"}
+2025-06-29 11:45:00: Raw API Response: {"id":"chatcmpl-11aae0a2-eb26-4f59-a7a0-bee30213b406","object":"chat.completion","created":1751190300,"model":"meta-llama/llama-4-scout-17b-16e-instruct","choices":[{"index":0,"message":{"role":"assistant","content":"I'm doing well, thank you. At TogetherA+, we prioritize trust and safety. Our helpers are background-checked and verified to ensure you receive reliable support. To access tasks, simply post a request on our platform, and we'll match you with a suitable helper. You can also browse our resource library for accessibility guides and tips. How can we assist you with tasks today?"},"logprobs":null,"finish_reason":"stop"}],"usage":{"queue_time":0.046767851,"prompt_tokens":1446,"prompt_time":0.053009769,"completion_tokens":75,"completion_time":0.179932783,"total_tokens":1521,"total_time":0.232942552},"usage_breakdown":null,"system_fingerprint":"fp_37da608fc1","x_groq":{"id":"req_01jyxh6snve5sr9s26p5rsmnb1"}}
+
+2025-06-29 11:45:00: AI response sent with conversation memory
+2025-06-30 06:59:28: Script started
+2025-06-30 06:59:28: Received data: {"message":"Hi"}
+2025-06-30 06:59:29: Raw API Response: {"id":"chatcmpl-7a813e6b-0ab2-47b7-bd76-5790891ca5c4","object":"chat.completion","created":1751259569,"model":"meta-llama/llama-4-scout-17b-16e-instruct","choices":[{"index":0,"message":{"role":"assistant","content":"Hi! Welcome to TogetherA+! I'm here to help you explore resources and connect with helpers who can support your independence and well-being. What brings you here today? Do you have a specific need or question in mind?"},"logprobs":null,"finish_reason":"stop"}],"usage":{"queue_time":0.049209207000000005,"prompt_tokens":1233,"prompt_time":0.033360393,"completion_tokens":46,"completion_time":0.091080817,"total_tokens":1279,"total_time":0.12444121},"usage_breakdown":null,"system_fingerprint":"fp_37da608fc1","x_groq":{"id":"req_01jyzk8q2refyaddrgm93v5k2d"}}
+
+2025-06-30 06:59:29: AI response sent with conversation memory
+2025-07-10 19:53:25: Script started
+2025-07-10 19:53:25: Received data: {"message":"Hello How are you?"}
+2025-07-10 19:53:25: Raw API Response: {"id":"chatcmpl-7f6e3630-eae9-4a6a-a304-6a234e9383b2","object":"chat.completion","created":1752170005,"model":"meta-llama/llama-4-scout-17b-16e-instruct","choices":[{"index":0,"message":{"role":"assistant","content":"I'm doing great, thanks for asking! I'm here to help and support you in any way I can. How about you? Is there something on your mind or something I can assist you with today? TogetherA+ is here to empower your independence and improve your quality of life - whether that's connecting with a trusted helper or exploring our accessibility resources. What's on your mind?"},"logprobs":null,"finish_reason":"stop"}],"usage":{"queue_time":0.049377393000000006,"prompt_tokens":1237,"prompt_time":0.035047437,"completion_tokens":75,"completion_time":0.150182779,"total_tokens":1312,"total_time":0.185230216},"usage_breakdown":null,"system_fingerprint":"fp_79da0e0073","x_groq":{"id":"req_01jztqh10afhga2c1x0f5rghkc"}}
+
+2025-07-10 19:53:25: AI response sent with conversation memory
+2025-07-10 19:53:41: Script started
+2025-07-10 19:53:41: Received data: {"message":"Can you tell me how this site works?"}
+2025-07-10 19:53:41: Raw API Response: {"id":"chatcmpl-0e51c1d6-0cee-4fad-9256-931a64a3a32f","object":"chat.completion","created":1752170021,"model":"meta-llama/llama-4-scout-17b-16e-instruct","choices":[{"index":0,"message":{"role":"assistant","content":"TogetherA+ is a platform that connects people with disabilities to trusted helpers and accessibility resources. We make it easy to find support with our task matching system, which pairs you with qualified helpers who can assist with daily living, health, transportation, technology, and more. You can browse our comprehensive resource library, find helpers in your area, and even access secure payment processing - all in one place. Have you considered exploring our helper profiles or posting a task to get started?"},"logprobs":null,"finish_reason":"stop"}],"usage":{"queue_time":0.046256767,"prompt_tokens":1330,"prompt_time":0.044934011,"completion_tokens":95,"completion_time":0.206384003,"total_tokens":1425,"total_time":0.251318014},"usage_breakdown":null,"system_fingerprint":"fp_5d3e4e58e1","x_groq":{"id":"req_01jztqhgbqfny8vdm25zhc1gy4"}}
+
+2025-07-10 19:53:41: AI response sent with conversation memory
